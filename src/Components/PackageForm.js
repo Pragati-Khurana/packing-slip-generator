@@ -14,6 +14,7 @@ const PackageForm = () => {
     let [pincode, setPincode] = useState("");
     let [mobileNo, setMobileNo] = useState("");
     let [packageCount, setPackageCount] = useState("");
+    let [fromName, setFromName] = useState("");
 
 
     // useEffect(() => {
@@ -126,12 +127,28 @@ const PackageForm = () => {
                             />
                         </Col>
                     </Form.Group>
+                    <div key={`inline-radio`} className="mb-3">
+                        <Form.Check
+                        inline
+                        label="Riddhim Khurana"
+                        name="group1"
+                        type='radio'
+                        value="Riddhim Khurana" onChange={(e)=>setFromName(e.target.value)}
+                        />
+                        <Form.Check
+                        inline
+                        label="Khurana Enterprise"
+                        name="group1"
+                        type='radio'
+                        value="Khurana Enterprise" onChange={(e)=>setFromName(e.target.value)}
+                        />
+                    </div>
                 </Form>
                 </Container>
             </Col>
             <Col>
                 <Container>
-                    <PrintPreviewPage name={name} address={address} pincode={pincode} mobileNo={mobileNo} packageCount={packageCount} className="pp" /> 
+                    <PrintPreviewPage fromName={fromName} name={name} address={address} city={city} state1={state1} pincode={pincode} mobileNo={mobileNo} packageCount={packageCount} className="pp" /> 
                     <Button
                         variant="outline-primary"
                         type="submit"

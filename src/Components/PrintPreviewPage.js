@@ -1,13 +1,28 @@
 import React from 'react'
 
-const PrintPreviewPage = ({name, address, pincode, mobileNo, packageCount}) => {
+const PrintPreviewPage = ({fromName, name, address,city, state1, pincode, mobileNo, packageCount}) => {
   return (
-    <div>
-        <h3>{name}</h3>
-        <h3>{address}</h3>
-        <h3>{pincode}</h3>
-        <h3>{mobileNo}</h3>
-        <div style={{fontSize:"70px"}}>{packageCount}</div>
+    <div style={{fontSize: '18px'}}>
+        <div style={{}}>
+          To,
+        </div>
+        <div style={{paddingLeft: '20px'}}>
+          <div  style={{fontSize: '22px', fontWeight: '500'}}>{name}</div>
+          <div>Address: {address}</div>
+          <div>{city}, {state1} - {pincode}</div>
+          <div> Mobile No.: {mobileNo}</div>
+        </div><br />
+        <div style={{fontSize: '24px', fontWeight: '500'}}>
+            No. of Parcel: {packageCount}
+        </div><br />
+        <div>
+          From,
+        </div>
+        <div  style={{paddingLeft: '20px'}}>
+         <div  style={{fontSize: '22px', fontWeight: '500'}}>{fromName}</div>
+         <div>Mobile No.: 9375044447</div>
+         <div>Surat</div>
+        </div>
     </div>
   )
 }
